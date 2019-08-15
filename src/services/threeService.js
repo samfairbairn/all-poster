@@ -5,7 +5,8 @@ import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 var vertexShader = require("../shaders/shader.vs");
 var fragmentShader = require("../shaders/shader.fs");
 
-import textureImg from '@/assets/bear1Imagem1.png'
+import bearTextureImg from '@/assets/bear1Imagem1.png'
+import ballTextureImg from '@/assets/ballImagem1.png'
 
 class threeService {
   constructor(el) {
@@ -45,8 +46,8 @@ class threeService {
       uniforms: {
         tGrid: {
           type: "t",
-          // value: THREE.ImageUtils.loadTexture('uv_grid_opengl.jpg')
-          value: THREE.ImageUtils.loadTexture(textureImg)
+          // value: THREE.ImageUtils.loadTexture(bearTextureImg)
+          value: THREE.ImageUtils.loadTexture(ballTextureImg)
         },
         time: {
           type: "f",
@@ -64,8 +65,8 @@ class threeService {
     };
 
     var loader = new OBJLoader( manager );
-    // loader.load( './male02.obj', function ( obj ) {
-    loader.load( '/staticAssets/bear1.obj', ( obj ) => {
+    // loader.load( '/staticAssets/bear1.obj', ( obj ) => {
+    loader.load( '/staticAssets/ball.obj', ( obj ) => {
       this.object = obj;
     }, this.onProgress, this.onError );
     
