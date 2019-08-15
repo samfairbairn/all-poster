@@ -58,6 +58,8 @@ class threeService {
       fragmentShader: fragmentShader
     });
 
+    this.material.side = THREE.DoubleSide
+
     var manager = new THREE.LoadingManager( this.loadModel );
 
     manager.onProgress = function ( item, loaded, total ) {
